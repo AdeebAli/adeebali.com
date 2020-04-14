@@ -1,0 +1,10 @@
+# Node Dependencies
+node_modules/
+
+.next/
+build/
+
+# coverage reporters
+.nyc_output
+coverage/
+.now
