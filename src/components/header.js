@@ -3,42 +3,43 @@ import {Link, Box, Button, useColorMode, Flex} from '@chakra-ui/core';
 
 const Header = props => {
 	const {colorMode, toggleColorMode} = useColorMode();
-	const bgColor = {light: 'light.shade', dark: 'dark.shade'};
-	const color = {light: 'dark.shade', dark: 'light.shade'};
 	return (
 		<Flex
 			as="nav"
-			align="center"
+			flexDirection="column"
+			justifyContent="space-between"
+			alignItems="center"
 			bg="brand"
 			color="white"
 			padding="1.5em"
+			width="100%"
 			{...props}
 		>
-			<Box mr="1em">
+			<Box className="links" mr="1em">
 				<NextLink passHref href="/">
-					<Link>Home</Link>
+					<Link fontWeight="600" px="1em">Home</Link>
 				</NextLink>
 				<NextLink passHref href="/about">
-					<Link>About</Link>
+					<Link fontWeight="600" px="1em">About</Link>
 				</NextLink>
 				<NextLink passHref href="/resume">
-					<Link>Resume</Link>
+					<Link fontWeight="600" px="1em">Resume</Link>
 				</NextLink>
 				<NextLink passHref href="/blog">
-					<Link>Blog</Link>
+					<Link fontWeight="600" px="1em">Blog</Link>
 				</NextLink>
 				<NextLink passHref href="/portfolio">
-					<Link>Portfolio</Link>
+					<Link fontWeight="600" px="1em">Portfolio</Link>
 				</NextLink>
 				<NextLink passHref href="/contact">
-					<Link>Contact</Link>
+					<Link fontWeight="600" px="1em">Contact</Link>
 				</NextLink>
 			</Box>
-			<Box align="right">
+			<Flex flexDirection="row">
 				<Button variantColor="purple" onClick={toggleColorMode}>
 					Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
 				</Button>
-			</Box>
+			</Flex>
 
 		</Flex>
 	);

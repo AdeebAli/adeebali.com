@@ -1,13 +1,16 @@
 // Import App from 'next/app'
 import {CSSReset, ThemeProvider, ColorModeProvider} from '@chakra-ui/core';
 import customTheme from '../components/theme';
+import Layout from '../components/layout';
 
 const App = ({Component, pageProps}) => {
 	return (
 		<ThemeProvider theme={customTheme}>
 			<CSSReset/>
 			<ColorModeProvider>
-				<Component {...pageProps}/>
+				<Layout>
+					<Component {...pageProps}/>
+				</Layout>
 			</ColorModeProvider>
 		</ThemeProvider>
 	);

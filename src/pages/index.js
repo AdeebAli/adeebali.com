@@ -1,6 +1,6 @@
 import Head from 'next/head';
+import {Box} from '@chakra-ui/core';
 
-import Header from '../components/header';
 // Add about me info here.
 const Index = () => {
 	return (
@@ -9,11 +9,9 @@ const Index = () => {
 				<title>Adeeb Ali</title>
 			</Head>
 
-			<div>
-				<Header/>
+			<Box>
 				Adeeb&apos;s website written in NextJS.
-
-			</div>
+			</Box>
 		</>
 	);
 };
