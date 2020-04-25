@@ -6,12 +6,12 @@ const Header = props => {
 	return (
 		<Flex
 			as="nav"
-			flexDirection="column"
+			flexDirection="row"
 			justifyContent="space-between"
 			alignItems="center"
 			bg="brand"
 			color="white"
-			padding="1.5em"
+			padding="3em"
 			width="100%"
 			{...props}
 		>
