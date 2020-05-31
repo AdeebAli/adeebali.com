@@ -16,13 +16,11 @@ const Layout = ({children}) => {
 
 	return (
 		<>
-			<Header height="5vh"/>
+			<Header/>
 			<Flex
 				as="main"
-				flexDirection="column"
 				bg={bgColor[colorMode]}
 				color={color[colorMode]}
-				minHeight="95vh"
 			>
 				{children}
 			</Flex>
