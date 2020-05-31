@@ -44,7 +44,9 @@ const Header = props => {
 				width={{base: 'full', md: 'auto'}}
 				ml={{base: 6}}
 			>
-
+				<NextLink passHref href="/">
+					<Link mt={{base: 3, md: 0}} mr={6} display="block">Home</Link>
+				</NextLink>
 				<NextLink passHref href="/about">
 					<Link mt={{base: 3, md: 0}} mr={6} display="block">About</Link>
 				</NextLink>
