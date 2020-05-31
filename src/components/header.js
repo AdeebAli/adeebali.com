@@ -40,6 +40,7 @@ const Header = props => {
 			<Flex
 				className="navItems"
 				alignItems="center"
+				textAlign="center"
 				display={{base: show ? 'block' : 'none', md: 'flex'}}
 				width={{base: 'full', md: 'auto'}}
 				ml={{base: 6}}
@@ -66,8 +67,15 @@ const Header = props => {
 				<Box
 					display={{base: show ? 'block' : 'none', md: 'block'}}
 					mt={{base: 3, md: 0}}
+
 				>
-					<IconButton variantColor="purple" aria-label="Change color mode" size="md" icon={colorMode === 'light' ? 'moon' : 'sun'} onClick={toggleColorMode}>
+					<IconButton
+						variantColor="purple"
+						mr={5}
+						aria-label="Change color mode"
+						size="md" icon={colorMode === 'light' ? 'moon' : 'sun'}
+						onClick={toggleColorMode}
+					>
 						Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
 					</IconButton>
 				</Box>
