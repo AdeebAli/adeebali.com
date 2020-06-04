@@ -1,4 +1,5 @@
 import Header from './header';
+import Footer from './footer';
 import {Flex, useColorMode} from '@chakra-ui/core';
 
 const Layout = ({children}) => {
@@ -6,24 +7,32 @@ const Layout = ({children}) => {
 
 	const bgColor = {
 		dark: 'dark.shade',
-		light: 'light.shade'
+		light: 'white'
 	};
 
 	const color = {
-		dark: 'light.shade',
+		dark: 'white',
 		light: 'dark.shade'
 	};
 
 	return (
 		<>
-			<Header/>
+			<Header
+				minHeight="10vh"
+			/>
 			<Flex
+				minHeight="85vh"
 				as="main"
 				bg={bgColor[colorMode]}
 				color={color[colorMode]}
 			>
 				{children}
 			</Flex>
+			<Footer
+				minHeight="5vh"
+				bg={bgColor[colorMode]}
+				color={color[colorMode]}
+			/>
 		</>
 	);
 };

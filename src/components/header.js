@@ -23,6 +23,7 @@ const Header = props => {
 				as="h1"
 				ml="5"
 				size="md"
+				fontSize={20}
 			>
 				<NextLink passHref href="/">
 					<Link fontWeight="bold">
@@ -41,6 +42,7 @@ const Header = props => {
 				className="navItems"
 				alignItems="center"
 				textAlign="center"
+				fontSize={17}
 				display={{base: show ? 'block' : 'none', md: 'flex'}}
 				width={{base: 'full', md: 'auto'}}
 				ml={{base: 6}}
@@ -75,9 +77,7 @@ const Header = props => {
 						aria-label="Change color mode"
 						size="md" icon={colorMode === 'light' ? 'moon' : 'sun'}
 						onClick={toggleColorMode}
-					>
-						Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-					</IconButton>
+					/>
 				</Box>
 			</Flex>
 		</Flex>
