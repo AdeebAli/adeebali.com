@@ -19,7 +19,6 @@
 * Modern Pink Backpack: #e76d89
 
 ## Purple Based Theme
-* purple #6432A0 or #784BAA or 5C246E
 * Main Color: Persian Indigo - #511479 - It can be liberally applied to layout as the main identity.
 * Light Shades: Pampas - #F1EEEC - Use as background color of dark on light (light mode) designs, or text color of inverted (dark mode) designs.
 * Light Accent: Ship Cove - #6B93C1 - Accent colors used to bring attention to design elements by contrasting with rest of palate. (use this the least.)
