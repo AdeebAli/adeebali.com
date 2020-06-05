@@ -8,7 +8,8 @@ const Footer = props => {
 			align="center"
 			alignContent="center"
 			verticalAlign="center"
-			padding={{base: 5, md: 0}}
+			pt={{base: 10, md: 0}}
+			pb={{base: 2, md: 0}}
 			{...props}
 		>
 			<Flex
