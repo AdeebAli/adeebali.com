@@ -14,6 +14,7 @@ const Footer = props => {
 			<Flex
 				className="iconContainer"
 				flexDirection="row"
+				mt={{base: 10, md: 0}}
 			>
 				<Link href="https://www.linkedin.com/in/adeeb-ali-b34515134" mr={1}>
 					<Box as={AiOutlineLinkedin} size={{base: '26px ', sm: '32px'}}/>
