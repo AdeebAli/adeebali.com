@@ -22,7 +22,6 @@ const Index = () => {
 				<Skeleton
 					isLoaded={imageLoaded}
 					rounded="full"
-					size={{base: '180px', sm: '200px', md: '220px', lg: '300px'}}
 					mt={{md: 30, lg: 33, xl: 33}}
 				>
 					<Image
@@ -30,7 +29,6 @@ const Index = () => {
 						src="/images/adeeb.jpg"
 						size={{base: '180px', sm: '200px', md: '220px', lg: '300px'}}
 						alt="Adeeb Ali"
-						mt={{md: 30, lg: 33, xl: 33}}
 						onLoad={() => setImageLoaded(true)}
 					/>
 				</Skeleton>
