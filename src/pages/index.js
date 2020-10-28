@@ -1,8 +1,10 @@
+import {useState} from 'react';
 import Head from 'next/head';
-import {Flex, Divider, Heading, Text, Image, useColorMode} from '@chakra-ui/core';
+import {Flex, Divider, Heading, Text, Image, Skeleton, useColorMode} from '@chakra-ui/core';
 
 const Index = () => {
 	const {colorMode} = useColorMode();
+	const [imageLoaded, setImageLoaded] = useState(false);
 	return (
 		<>
 			<Head>
@@ -17,13 +19,22 @@ const Index = () => {
 				align="center"
 				alignContent="center"
 			>
-				<Image
+				<Skeleton
+					isLoaded={imageLoaded}
 					rounded="full"
-					src="/images/adeeb.jpg"
 					size={{base: '180px', sm: '200px', md: '220px', lg: '300px'}}
-					alt="Adeeb Ali"
 					mt={{md: 30, lg: 33, xl: 33}}
-				/>
+				>
+					<Image
+						rounded="full"
+						src="/images/adeeb.jpg"
+						size={{base: '180px', sm: '200px', md: '220px', lg: '300px'}}
+						alt="Adeeb Ali"
+						mt={{md: 30, lg: 33, xl: 33}}
+						onLoad={() => setImageLoaded(true)}
+					/>
+				</Skeleton>
+
 				<Heading
 					as="h1"
 					mt={10}
