@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "xo",
     "lint:fix": "xo --fix",
-    "test": "xo && nyc ava"
+    "test": "xo && nyc jest"
   },
   "keywords": [
     "Adeeb Ali",
@@ -18,7 +18,7 @@
     "nodejs",
     "react",
     "xo",
-    "ava"
+    "jest"
   ],
   "author": "Adeeb Ali",
   "license": "",
@@ -36,16 +36,17 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.5",
-    "ava": "^3.15.0",
     "eslint": "^8.5.0",
     "eslint-config-next": "^12.0.7",
     "eslint-plugin-react-hooks": "^3.0.0",
+    "jest": "^27.5.1",
     "nyc": "^15.1.0",
     "xo": "^0.47.0"
   },
   "xo": {
     "envs": [
-      "node"
+      "node",
+      "jest"
     ],
     "extends": [
       "next"
