@@ -1,4 +1,6 @@
+import {ColorModeScript} from '@chakra-ui/react';
 import Document, {Html, Head, Main, NextScript} from 'next/document';
+import theme from '../components/theme.js';
 
 class MyDocument extends Document {
 	static async getInitialProps(ctx) {
@@ -10,11 +12,10 @@ class MyDocument extends Document {
 		return (
 			<Html>
 				<Head>
-					<meta charSet="utf-8"/>
-					<meta name="viewport" content="initial-scale=1.0, width=device-width"/>
 					<link rel="shortcut icon" href="/favicon.ico"/>
 				</Head>
 				<body>
+					<ColorModeScript initialColorMode={theme.config.initialColorMode}/>
 					<Main/>
 					<NextScript/>
 				</body>

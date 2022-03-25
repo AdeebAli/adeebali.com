@@ -1,18 +1,18 @@
-import Header from './header';
-import Footer from './footer';
-import {Flex, useColorMode} from '@chakra-ui/core';
+import {Flex, useColorMode} from '@chakra-ui/react';
+import Header from './header.js';
+import Footer from './footer.js';
 
 const Layout = ({children}) => {
 	const {colorMode} = useColorMode();
 
 	const bgColor = {
 		dark: 'dark.shade',
-		light: 'white'
+		light: 'white',
 	};
 
 	const color = {
 		dark: 'white',
-		light: 'dark.shade'
+		light: 'dark.shade',
 	};
 
 	return (

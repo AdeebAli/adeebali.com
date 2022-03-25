@@ -1,4 +1,4 @@
-import {Heading} from '@chakra-ui/core';
+import {Heading} from '@chakra-ui/react';
 
 const UnderConstruction = props => (
 	<div {...props} bg="light.shade">

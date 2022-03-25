@@ -1,5 +1,6 @@
-import NextLink from 'next/link';
-import {Link, Heading, IconButton, useColorMode, Flex, Box} from '@chakra-ui/core';
+import NextLink from 'next/link.js';
+import {Link, Heading, IconButton, useColorMode, Flex, Box} from '@chakra-ui/react';
+import {MoonIcon, SunIcon} from '@chakra-ui/icons';
 import {MdMenu, MdClose} from 'react-icons/md';
 import {useState} from 'react';
 
@@ -72,10 +73,10 @@ const Header = props => {
 
 				>
 					<IconButton
-						variantColor="purple"
+						colorScheme="purple"
 						mr={5}
 						aria-label="Change color mode"
-						size="md" icon={colorMode === 'light' ? 'moon' : 'sun'}
+						size="md" icon={colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
 						onClick={toggleColorMode}
 					/>
 				</Box>

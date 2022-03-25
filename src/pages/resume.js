@@ -1,4 +1,4 @@
-import UnderConstruction from '../components/underConstruction';
+import UnderConstruction from '../components/underConstruction.js';
 
 const Resume = () => (
 	<UnderConstruction/>
