@@ -1,3 +1,7 @@
 .profilePicture {
     border-radius: 100%;
 }
+
+.profilePicture::placeholder {
+    border-radius: 100%;
+}
