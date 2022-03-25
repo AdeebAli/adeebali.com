@@ -1,10 +1,12 @@
-import {useState} from 'react';
+// Import {useState} from 'react';
 import Head from 'next/head';
-import {Flex, Divider, Heading, Text, Image, Skeleton, useColorMode} from '@chakra-ui/core';
+import {Flex, Box, Divider, Heading, Text, useColorMode} from '@chakra-ui/react';
+import Image from 'next/image';
+import styles from '../components/index.module.css';
+import profilePicture from '../../public/images/adeeb.jpg';
 
 const Index = () => {
 	const {colorMode} = useColorMode();
-	const [imageLoaded, setImageLoaded] = useState(false);
 	return (
 		<>
 			<Head>
@@ -19,19 +21,19 @@ const Index = () => {
 				align="center"
 				alignContent="center"
 			>
-				<Skeleton
-					isLoaded={imageLoaded}
-					rounded="full"
-					mt={{md: 30, lg: 33, xl: 33}}
+				<Box
+					boxSize={{base: '180px', sm: '200px', md: '220px', lg: '300px'}}
+					borderRadius="100px"
+
 				>
 					<Image
-						rounded="full"
-						src="/images/adeeb.jpg"
-						size={{base: '180px', sm: '200px', md: '220px', lg: '300px'}}
+						src={profilePicture}
 						alt="Adeeb Ali"
-						onLoad={() => setImageLoaded(true)}
+						layout="responsive"
+						placeholder="blur"
+						className={styles.profilePicture}
 					/>
-				</Skeleton>
+				</Box>
 
 				<Heading
 					as="h1"
@@ -52,7 +54,7 @@ const Index = () => {
 					maxWidth={{base: '80%', md: 750}}
 					fontSize={{base: 16, sm: 18, md: 20}}
 				>
-					I&apos;m a Software Engineer currently working at Optum, a UnitedHealth Group Company. I graduated from the University of Minnesota, Twin Cities in 2019 with a Bachelor of Science in Computer Science, and a Management Minor from the Carlson School of Management.
+					I&apos;m a Senior Software Engineer currently working at Target. I graduated from the University of Minnesota, Twin Cities in 2019 with a Bachelor of Science in Computer Science, and a Management Minor from the Carlson School of Management.
 					I&apos;m passionate about all things JavaScript and Node.js, and am always working to be a better developer every day.
 				</Text>
 				<Text

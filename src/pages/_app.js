@@ -1,20 +1,23 @@
 // Import App from 'next/app'
-import {CSSReset, ThemeProvider, ColorModeProvider} from '@chakra-ui/core';
-import customTheme from '../components/theme';
-import Layout from '../components/layout';
+import Head from 'next/head';
+import {ChakraProvider} from '@chakra-ui/react';
+import theme from '../components/theme.js';
+import Layout from '../components/layout.js';
 
-const App = ({Component, pageProps}) => {
-	return (
-		<ThemeProvider theme={customTheme}>
-			<CSSReset/>
-			<ColorModeProvider>
-				<Layout>
-					<Component {...pageProps}/>
-				</Layout>
-			</ColorModeProvider>
-		</ThemeProvider>
-	);
-};
+const App = ({Component, pageProps}) => (
+	<>
+		<Head>
+			<meta charSet="utf-8"/>
+			<meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+		</Head>
+		<ChakraProvider theme={theme} resetCSS={true}>
+			<Layout>
+				<Component {...pageProps}/>
+			</Layout>
+		</ChakraProvider>
+	</>
+
+);
 
 // Only uncomment this method if you have blocking data requirements for
 // every single page in your application. This disables the ability to

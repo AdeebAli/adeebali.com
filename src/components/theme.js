@@ -1,28 +1,35 @@
-import {theme} from '@chakra-ui/core';
+import {extendTheme} from '@chakra-ui/react';
 // Default font size is 16px
-const breakpoints = ['30em', '48em', '62em', '80em'];
-breakpoints.sm = breakpoints[0];
-breakpoints.md = breakpoints[1];
-breakpoints.lg = breakpoints[2];
-breakpoints.xl = breakpoints[3];
-const customTheme = {
-	...theme,
+
+import {createBreakpoints} from '@chakra-ui/theme-tools';
+
+const breakpoints = createBreakpoints({
+	sm: '30em',
+	md: '48em',
+	lg: '62em',
+	xl: '80em',
+});
+
+const overrides = {
+	initialColorMode: 'light',
+	useSystemColorMode: true,
 	colors: {
-		...theme.colors,
 		black: '#000',
 		white: '#fff',
 		brand: '#511479',
 		dark: {
 			accent: '#746F94',
-			shade: '#1B2234'
+			shade: '#1B2234',
 		},
 		light: {
 			accent: '#6B93C1',
-			shade: '#F1EEEC'
-		}
+			shade: '#F1EEEC',
+		},
 	},
-	breakpoints
+	breakpoints,
 
 };
+
+const customTheme = extendTheme(overrides);
 
 export default customTheme;
