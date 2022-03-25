@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import {Flex} from '@chakra-ui/react';
-import UnderConstruction from '../components/underConstruction.js';
 
 const Contact = () => (
 	<>
