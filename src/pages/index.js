@@ -23,9 +23,10 @@ const Index = () => {
 			>
 				<Box
 					boxSize={{base: '180px', sm: '200px', md: '220px', lg: '300px'}}
-					borderRadius="100px"
-
+					borderRadius="100%"
+					overflow="hidden"
 				>
+
 					<Image
 						src={profilePicture}
 						alt="Adeeb Ali"
@@ -33,6 +34,7 @@ const Index = () => {
 						placeholder="blur"
 						className={styles.profilePicture}
 					/>
+
 				</Box>
 
 				<Heading
@@ -64,7 +66,7 @@ const Index = () => {
 					maxWidth={{base: '80%', md: 750}}
 					fontSize={{base: 16, sm: 18, md: 20}}
 				>
-					When I&apos;m not writing code at work, you can find me happily plugging away writing code at home, exploring Minneapolis, at the Target Center watching the Timberwolves lose, or working out at Lifetime Fitness.
+					When I&apos;m not writing code at work, you can find me happily plugging away writing code at home, exploring Minneapolis, at the Target Center watching the Timberwolves, or at the gym.
 				</Text>
 				<Text
 					mt={5}

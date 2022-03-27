@@ -29,6 +29,7 @@ const Layout = ({children}) => {
 				{children}
 			</Flex>
 			<Footer
+				pt={9}
 				minHeight="5vh"
 				bg={bgColor[colorMode]}
 				color={color[colorMode]}
