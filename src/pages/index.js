@@ -15,30 +15,29 @@ const Index = () => {
 
 			<Flex
 				mt={8}
-				width="100%"
-				className="indexPageContent"
-				flexDirection="column"
-				align="center"
-				alignContent="center"
+				width='100%'
+				className='indexPageContent'
+				flexDirection='column'
+				align='center'
+				alignContent='center'
 			>
 				<Box
 					boxSize={{base: '180px', sm: '200px', md: '220px', lg: '300px'}}
-					borderRadius="100%"
-					overflow="hidden"
+					borderRadius='100%'
+					overflow='hidden'
 				>
 
 					<Image
 						src={profilePicture}
-						alt="Adeeb Ali"
-						layout="responsive"
-						placeholder="blur"
+						alt='Adeeb Ali'
+						placeholder='blur'
 						className={styles.profilePicture}
 					/>
 
 				</Box>
 
 				<Heading
-					as="h1"
+					as='h1'
 					mt={10}
 					fontSize={{base: 28, md: 36}}
 				>
@@ -51,8 +50,8 @@ const Index = () => {
 				/>
 				<Text
 					mt={5}
-					as="p"
-					textAlign="center"
+					as='p'
+					textAlign='center'
 					maxWidth={{base: '80%', md: 750}}
 					fontSize={{base: 16, sm: 18, md: 20}}
 				>
@@ -61,8 +60,8 @@ const Index = () => {
 				</Text>
 				<Text
 					mt={5}
-					as="p"
-					textAlign="center"
+					as='p'
+					textAlign='center'
 					maxWidth={{base: '80%', md: 750}}
 					fontSize={{base: 16, sm: 18, md: 20}}
 				>
@@ -70,8 +69,8 @@ const Index = () => {
 				</Text>
 				<Text
 					mt={5}
-					as="p"
-					textAlign="center"
+					as='p'
+					textAlign='center'
 					maxWidth={{base: '80%', md: 750}}
 					fontSize={{base: 16, sm: 18, md: 20}}
 				>

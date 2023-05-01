@@ -1,14 +1,12 @@
 import {extendTheme} from '@chakra-ui/react';
 // Default font size is 16px
 
-import {createBreakpoints} from '@chakra-ui/theme-tools';
-
-const breakpoints = createBreakpoints({
+const breakpoints = {
 	sm: '30em',
 	md: '48em',
 	lg: '62em',
 	xl: '80em',
-});
+};
 
 const overrides = {
 	initialColorMode: 'light',
