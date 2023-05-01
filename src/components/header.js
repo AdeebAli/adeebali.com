@@ -1,5 +1,5 @@
-import NextLink from 'next/link.js';
-import {Link, Heading, IconButton, useColorMode, Flex, Box} from '@chakra-ui/react';
+import NextLink from 'next/link';
+import {Heading, IconButton, useColorMode, Flex, Box} from '@chakra-ui/react';
 import {MoonIcon, SunIcon} from '@chakra-ui/icons';
 import {MdMenu, MdClose} from 'react-icons/md';
 import {useState} from 'react';
@@ -27,9 +27,9 @@ const Header = props => {
 				fontSize={20}
 			>
 				<NextLink passHref href="/">
-					<Link fontWeight="bold">
+					<Box fontWeight="bold">
 						Adeeb Ali
-					</Link>
+					</Box>
 				</NextLink>
 			</Heading>
 
@@ -49,22 +49,22 @@ const Header = props => {
 				ml={{base: 6}}
 			>
 				<NextLink passHref href="/">
-					<Link mt={{base: 3, md: 0}} mr={6} display="block">Home</Link>
+					<Box mt={{base: 3, md: 0}} mr={6} display="block">Home</Box>
 				</NextLink>
 				<NextLink passHref href="/about">
-					<Link mt={{base: 3, md: 0}} mr={6} display="block">About</Link>
+					<Box mt={{base: 3, md: 0}} mr={6} display="block">About</Box>
 				</NextLink>
 				<NextLink passHref href="/resume">
-					<Link mt={{base: 3, md: 0}} mr={6} display="block">Resume</Link>
+					<Box mt={{base: 3, md: 0}} mr={6} display="block">Resume</Box>
 				</NextLink>
 				<NextLink passHref href="/blog">
-					<Link mt={{base: 3, md: 0}} mr={6} display="block">Blog</Link>
+					<Box mt={{base: 3, md: 0}} mr={6} display="block">Blog</Box>
 				</NextLink>
 				<NextLink passHref href="/portfolio">
-					<Link mt={{base: 3, md: 0}} mr={6} display="block">Portfolio</Link>
+					<Box mt={{base: 3, md: 0}} mr={6} display="block">Portfolio</Box>
 				</NextLink>
 				<NextLink passHref href="/contact">
-					<Link mt={{base: 3, md: 0}} mr={6} display="block">Contact</Link>
+					<Box mt={{base: 3, md: 0}} mr={6} display="block">Contact</Box>
 				</NextLink>
 
 				<Box
