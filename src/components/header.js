@@ -1,5 +1,5 @@
-import NextLink from 'next/link.js';
-import {Link, Heading, IconButton, useColorMode, Flex, Box} from '@chakra-ui/react';
+import Link from 'next/link';
+import {Heading, IconButton, useColorMode, Flex, Box} from '@chakra-ui/react';
 import {MoonIcon, SunIcon} from '@chakra-ui/icons';
 import {MdMenu, MdClose} from 'react-icons/md';
 import {useState} from 'react';
@@ -11,26 +11,26 @@ const Header = props => {
 
 	return (
 		<Flex
-			as="nav"
-			padding="1.5rem"
-			bg="brand"
-			color="white"
-			justify="space-between"
-			wrap="wrap"
-			align="center"
+			as='nav'
+			padding='1.5rem'
+			bg='brand'
+			color='white'
+			justify='space-between'
+			wrap='wrap'
+			align='center'
 			{...props}
 		>
 			<Heading
-				as="h1"
-				ml="5"
-				size="md"
+				as='h1'
+				ml='5'
+				size='md'
 				fontSize={20}
 			>
-				<NextLink passHref href="/">
-					<Link fontWeight="bold">
+				<Link passHref href='/'>
+					<Box fontWeight='bold'>
 						Adeeb Ali
-					</Link>
-				</NextLink>
+					</Box>
+				</Link>
 			</Heading>
 
 			<Box
@@ -40,32 +40,32 @@ const Header = props => {
 				<Box as={show ? MdClose : MdMenu}/>
 			</Box>
 			<Flex
-				className="navItems"
-				alignItems="center"
-				textAlign="center"
+				className='navItems'
+				alignItems='center'
+				textAlign='center'
 				fontSize={17}
 				display={{base: show ? 'block' : 'none', md: 'flex'}}
 				width={{base: 'full', md: 'auto'}}
 				ml={{base: 6}}
 			>
-				<NextLink passHref href="/">
-					<Link mt={{base: 3, md: 0}} mr={6} display="block">Home</Link>
-				</NextLink>
-				<NextLink passHref href="/about">
-					<Link mt={{base: 3, md: 0}} mr={6} display="block">About</Link>
-				</NextLink>
-				<NextLink passHref href="/resume">
-					<Link mt={{base: 3, md: 0}} mr={6} display="block">Resume</Link>
-				</NextLink>
-				<NextLink passHref href="/blog">
-					<Link mt={{base: 3, md: 0}} mr={6} display="block">Blog</Link>
-				</NextLink>
-				<NextLink passHref href="/portfolio">
-					<Link mt={{base: 3, md: 0}} mr={6} display="block">Portfolio</Link>
-				</NextLink>
-				<NextLink passHref href="/contact">
-					<Link mt={{base: 3, md: 0}} mr={6} display="block">Contact</Link>
-				</NextLink>
+				<Link passHref href='/'>
+					<Box mt={{base: 3, md: 0}} mr={6} display='block'>Home</Box>
+				</Link>
+				<Link passHref href='/about'>
+					<Box mt={{base: 3, md: 0}} mr={6} display='block'>About</Box>
+				</Link>
+				<Link passHref href='/resume'>
+					<Box mt={{base: 3, md: 0}} mr={6} display='block'>Resume</Box>
+				</Link>
+				<Link passHref href='/blog'>
+					<Box mt={{base: 3, md: 0}} mr={6} display='block'>Blog</Box>
+				</Link>
+				<Link passHref href='/portfolio'>
+					<Box mt={{base: 3, md: 0}} mr={6} display='block'>Portfolio</Box>
+				</Link>
+				<Link passHref href='/contact'>
+					<Box mt={{base: 3, md: 0}} mr={6} display='block'>Contact</Box>
+				</Link>
 
 				<Box
 					display={{base: show ? 'block' : 'none', md: 'block'}}
@@ -73,10 +73,10 @@ const Header = props => {
 
 				>
 					<IconButton
-						colorScheme="purple"
+						colorScheme='purple'
 						mr={5}
-						aria-label="Change color mode"
-						size="md" icon={colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
+						aria-label='Change color mode'
+						size='md' icon={colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
 						onClick={toggleColorMode}
 					/>
 				</Box>

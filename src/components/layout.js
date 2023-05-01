@@ -1,6 +1,6 @@
 import {Flex, useColorMode} from '@chakra-ui/react';
-import Header from './header.js';
-import Footer from './footer.js';
+import Header from './header';
+import Footer from './footer';
 
 const Layout = ({children}) => {
 	const {colorMode} = useColorMode();
@@ -18,19 +18,19 @@ const Layout = ({children}) => {
 	return (
 		<>
 			<Header
-				minHeight="10vh"
+				minHeight='10vh'
 			/>
 			<Flex
-				minHeight="85vh"
-				as="main"
+				minHeight='85vh'
+				as='main'
 				bg={bgColor[colorMode]}
 				color={color[colorMode]}
 			>
 				{children}
 			</Flex>
 			<Footer
-				pt={9}
-				minHeight="5vh"
+				// Pt={9}
+				minHeight='5vh'
 				bg={bgColor[colorMode]}
 				color={color[colorMode]}
 			/>
