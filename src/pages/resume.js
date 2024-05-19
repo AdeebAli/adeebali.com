@@ -1,7 +1,7 @@
-import UnderConstruction from '../components/underConstruction';
+import Resume from '../capabilities/resume/resume';
 
-const Resume = () => (
-	<UnderConstruction/>
+const ResumePage = () => (
+	<Resume/>
 );
 
-export default Resume;
+export default ResumePage;
