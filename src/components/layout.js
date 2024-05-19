@@ -21,7 +21,7 @@ const Layout = ({children}) => {
 			<Flex
 				as='main'
 				flex={1}
-				marginTop='7em'
+				marginTop={'94px'}
 				bg={bgColor[colorMode]}
 				color={color[colorMode]}
 				paddingBottom={{base: 4, md: 8}}
