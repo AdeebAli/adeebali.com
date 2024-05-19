@@ -81,7 +81,7 @@ const OrganizationCard = ({organizationItems}) => {
 						return (
 							<Box key={index}>
 								<Stack direction='row' spacing={4}>
-									<Box boxSize='60px'>
+									<Box boxSize={{base: '36', md: '60px'}}>
 										<Image src={imageMap[orgName]} alt={`${orgName} logo`}/>
 									</Box>
 									<Stack direction='column' spacing={4}>
@@ -128,7 +128,7 @@ const EducationCard = ({educationItems}) => {
 						return (
 							<Box key={index}>
 								<Stack direction='row' spacing={4}>
-									<Box boxSize='60px'>
+									<Box boxSize={{base: '24', md: '60px'}}>
 										<Image src={imageMap[school]} alt={`${school} logo`} />
 									</Box>
 									<Stack direction='column' spacing={4}>
@@ -181,7 +181,7 @@ const ExperienceCard = ({experienceItems}) => {
 							return (
 								<Box key={index}>
 									<Stack direction='row' spacing={4}>
-										<Box boxSize='60px'>
+										<Box boxSize={{base: '48', md: '60px'}}>
 											<Image
 												src={imageMap[company]}
 												alt={`${company} logo`}
@@ -257,7 +257,10 @@ const ResumeCard = () => {
 					</Center>
 					<Text marginTop={8} maxWidth={'80%'}>{resumeJson.header.aboutMe}</Text>
 				</CardHeader>
-				<CardBody paddingTop={0}>
+				<CardBody
+					paddingX={{base: 0, md: '20px'}}
+					paddingTop={0}
+				>
 					<Stack direction='column' spacing={2}>
 						<ExperienceCard experienceItems={experience} />
 						<EducationCard educationItems={education} />
@@ -277,7 +280,7 @@ const Resume = () => (
 		flexDirection={'column'}
 		alignItems='center'
 	>
-		<Box width='85%'>
+		<Box width={{base: '100%', md: '85%'}}>
 			<Box align='right' marginBottom={4}>
 				<Button as='a' href='documents/Adeeb.Ali-resume.pdf' download={'adeeb-ali-resume.pdf'} leftIcon={<AiOutlineDownload />} variant='solid' colorScheme='green'>Download My Resume!</Button>
 			</Box>
