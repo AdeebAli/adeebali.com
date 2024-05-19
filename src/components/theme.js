@@ -14,6 +14,7 @@ const overrides = {
 	colors: {
 		black: '#000',
 		white: '#fff',
+		grey: '#BEBEBE',
 		brand: '#511479',
 		dark: {
 			accent: '#746F94',

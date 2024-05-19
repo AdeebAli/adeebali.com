@@ -1,4 +1,4 @@
-import {Flex, useColorMode} from '@chakra-ui/react';
+import {Box, Flex, useColorMode} from '@chakra-ui/react';
 import Header from './header';
 import Footer from './footer';
 
@@ -6,35 +6,30 @@ const Layout = ({children}) => {
 	const {colorMode} = useColorMode();
 
 	const bgColor = {
-		dark: 'dark.shade',
+		dark: 'black',
 		light: 'white',
 	};
 
 	const color = {
 		dark: 'white',
-		light: 'dark.shade',
+		light: 'black',
 	};
 
 	return (
-		<>
-			<Header
-				minHeight='10vh'
-			/>
+		<Box display='flex' flexDirection='column' minHeight='100vh'>
+			<Header/>
 			<Flex
-				minHeight='85vh'
 				as='main'
+				flex={1}
+				marginTop='7em'
 				bg={bgColor[colorMode]}
 				color={color[colorMode]}
+				paddingBottom={{base: 4, md: 8}}
 			>
 				{children}
 			</Flex>
-			<Footer
-				// Pt={9}
-				minHeight='5vh'
-				bg={bgColor[colorMode]}
-				color={color[colorMode]}
-			/>
-		</>
+			<Footer/>
+		</Box>
 	);
 };
 
