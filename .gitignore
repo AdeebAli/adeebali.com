@@ -11,3 +11,7 @@ build/
 .nyc_output
 coverage/
 .now
+
+# Misc
+.DS_Store
+*.log

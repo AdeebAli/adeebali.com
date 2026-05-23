@@ -19,6 +19,7 @@ import {
 import Image from 'next/image';
 import {DateTime} from 'luxon';
 import {AiOutlineDownload} from 'react-icons/ai';
+import himsLogo from '../../../public/images/himslogo.svg';
 import targetLogo from '../../../public/images/targetlogo.svg';
 import optumLogo from '../../../public/images/optumlogo.svg';
 import spsLogo from '../../../public/images/spslogo.svg';
@@ -32,7 +33,8 @@ type DividerProps = StackDividerProps & {
 	darkColor?: string;
 };
 
-const imageMap: Record<string, typeof targetLogo> = {
+const imageMap: Record<string, SvgImage> = {
+	'hims & hers': himsLogo,
 	Target: targetLogo,
 	Optum: optumLogo,
 	'SPS Commerce': spsLogo,
