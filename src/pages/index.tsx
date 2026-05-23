@@ -55,7 +55,7 @@ const Index = () => {
 				/>
 				<BodyText>
 					I&apos;m a Senior Software Engineer currently working at hims & hers. I graduated from the University of Minnesota, Twin Cities in 2019 with a Bachelor of Science in Computer Science, and a Management Minor from the Carlson School of Management.
-					I&apos;m passionate about all things JavaScript and Node.js, and am always working to be a better developer every day.
+					I&apos;m passionate about all things Web dev, JavaScript and Node.js, and am always working to be a better developer every day.
 				</BodyText>
 				<BodyText>
 					When I&apos;m not writing code at work, you can find me tinkering- whether that&apos;s on my Raspberry Pi, my 3D Printer, or working on a personal project.
