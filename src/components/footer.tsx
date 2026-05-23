@@ -1,7 +1,7 @@
-import {Flex, Box, Link, useColorMode} from '@chakra-ui/react';
+import {Flex, Box, Link, useColorMode, type FlexProps} from '@chakra-ui/react';
 import {AiOutlineLinkedin, AiOutlineGithub, AiOutlineMail} from 'react-icons/ai';
 
-const Footer = props => {
+const Footer = (props: FlexProps) => {
 	const {colorMode} = useColorMode();
 
 	const bgColor = {
@@ -15,7 +15,6 @@ const Footer = props => {
 	};
 
 	return (
-
 		<Flex
 			className='footer'
 			align='center'

@@ -1,13 +1,23 @@
 import NextLink from 'next/link';
-import {IconButton, useColorMode, Flex, Box, useOutsideClick, Stack, Text, Link} from '@chakra-ui/react';
+import {
+	IconButton,
+	useColorMode,
+	Flex,
+	Box,
+	useOutsideClick,
+	Stack,
+	Text,
+	Link,
+	type FlexProps,
+} from '@chakra-ui/react';
 import {MoonIcon, SunIcon} from '@chakra-ui/icons';
 import {MdMenu, MdClose} from 'react-icons/md';
 import {useRef, useState} from 'react';
 import {useMotionValueEvent, useScroll} from 'framer-motion';
 
-const Header = props => {
+const Header = (props: FlexProps) => {
 	const {colorMode, toggleColorMode} = useColorMode();
-	const ref = useRef();
+	const ref = useRef<HTMLDivElement>(null);
 	const [show, setShow] = useState(false);
 	const handleToggle = () => setShow(!show);
 	const [scrollPosition, setScrollPosition] = useState(0);
@@ -40,9 +50,8 @@ const Header = props => {
 			zIndex={100}
 			{...props}
 		>
-
 			<Link size={'md'} fontSize={20} fontWeight='bold' as={NextLink} href='/'>
-						Adeeb Ali
+				Adeeb Ali
 			</Link>
 
 			<Box
@@ -77,7 +86,6 @@ const Header = props => {
 						size='md' icon={colorMode === 'light' ? <MoonIcon/> : <SunIcon/>}
 						onClick={toggleColorMode}
 					/>
-
 				</Stack>
 			</Box>
 		</Flex>

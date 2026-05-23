@@ -1,4 +1,21 @@
-import {Box, Button, Card, CardBody, CardHeader, Center, Flex, Heading, ListItem, Stack, StackDivider, Tag, Text, UnorderedList, useColorMode} from '@chakra-ui/react';
+import {
+	Box,
+	Button,
+	Card,
+	CardBody,
+	CardHeader,
+	Center,
+	Flex,
+	Heading,
+	ListItem,
+	Stack,
+	StackDivider,
+	Tag,
+	Text,
+	UnorderedList,
+	useColorMode,
+	type StackDividerProps,
+} from '@chakra-ui/react';
 import Image from 'next/image';
 import {DateTime} from 'luxon';
 import {AiOutlineDownload} from 'react-icons/ai';
@@ -7,9 +24,15 @@ import optumLogo from '../../../public/images/optumlogo.svg';
 import spsLogo from '../../../public/images/spslogo.svg';
 import umnLogo from '../../../public/images/umnlogo.svg';
 import {formatDurationYearsMonths, formattedDateStringMonthAndYear, formattedEndDateString} from '../../util/datetime';
-import resumeJson from './resume.json';
+import resumeData, {type ExperienceItem, type EducationItem, type OrganizationItem, type Skills} from './resumeData';
 
-const imageMap = {
+type DividerProps = StackDividerProps & {
+	colorMode: 'light' | 'dark';
+	lightColor?: string;
+	darkColor?: string;
+};
+
+const imageMap: Record<string, typeof targetLogo> = {
 	Target: targetLogo,
 	Optum: optumLogo,
 	'SPS Commerce': spsLogo,
@@ -17,18 +40,20 @@ const imageMap = {
 	'Carlson School of Management': umnLogo,
 };
 
-const Divider = props => {
-	const {colorMode, lightColor, darkColor, ...otherProps} = props;
-	return (<StackDivider borderColor={props.colorMode === 'light' ? (lightColor || 'blackAlpha.400') : (darkColor || 'whiteAlpha.400')} {...otherProps} />);
-};
+const Divider = ({colorMode, lightColor, darkColor, ...otherProps}: DividerProps) => (
+	<StackDivider
+		borderColor={colorMode === 'light' ? (lightColor ?? 'blackAlpha.400') : (darkColor ?? 'whiteAlpha.400')}
+		{...otherProps}
+	/>
+);
 
-const SkillsCard = ({skillItems}) => {
+const SkillsCard = ({skillItems}: {skillItems: Skills}) => {
 	const {languages, frameworks, CI, databases, tools, runTimes} = skillItems;
 	return (
 		<Card>
 			<CardHeader>
 				<Heading paddingBottom={0} size='lg'>
-				Skills
+					Skills
 				</Heading>
 			</CardHeader>
 			<CardBody>
@@ -48,7 +73,6 @@ const SkillsCard = ({skillItems}) => {
 					<Box>
 						<Heading marginBottom={2} size='md'>Databases</Heading>
 						{databases.map((database, index) => (<Tag marginRight={2} marginBottom={2} key={index} size='md' colorScheme='green' borderRadius='full'>{database}</Tag>))}
-
 					</Box>
 					<Box>
 						<Heading marginBottom={2} size='md'>Tools</Heading>
@@ -64,13 +88,13 @@ const SkillsCard = ({skillItems}) => {
 	);
 };
 
-const OrganizationCard = ({organizationItems}) => {
+const OrganizationCard = ({organizationItems}: {organizationItems: OrganizationItem[]}) => {
 	const {colorMode} = useColorMode();
 	return (
 		<Card>
 			<CardHeader>
 				<Heading size='lg'>
-				Organizations
+					Organizations
 				</Heading>
 			</CardHeader>
 			<CardBody>
@@ -112,7 +136,7 @@ const OrganizationCard = ({organizationItems}) => {
 	);
 };
 
-const EducationCard = ({educationItems}) => {
+const EducationCard = ({educationItems}: {educationItems: EducationItem[]}) => {
 	const {colorMode} = useColorMode();
 	return (
 		<Card>
@@ -134,7 +158,7 @@ const EducationCard = ({educationItems}) => {
 									<Stack direction='column' spacing={4}>
 										<Stack direction='column' spacing={2}>
 											<Heading size='md'>{school}</Heading>
-											<Text color={colorMode === 'light' ? 'blackAlpha.600' : 'whiteAlpha.600'} fontSize={14}>{DateTime.fromISO(startDate).toFormat('y') } - {DateTime.fromISO(gradDate).toFormat('y')}</Text>
+											<Text color={colorMode === 'light' ? 'blackAlpha.600' : 'whiteAlpha.600'} fontSize={14}>{DateTime.fromISO(startDate).toFormat('y')} - {DateTime.fromISO(gradDate).toFormat('y')}</Text>
 											<Stack direction='column' spacing={0}>
 												{concentrations.map((concentration, index) => {
 													const {degreeName, school} = concentration;
@@ -168,18 +192,19 @@ const EducationCard = ({educationItems}) => {
 	);
 };
 
-const ExperienceCard = ({experienceItems}) => {
+const ExperienceCard = ({experienceItems}: {experienceItems: ExperienceItem[]}) => {
 	const {colorMode} = useColorMode();
 	return (
 		<Card>
 			<CardHeader>
 				<Heading size='lg' paddingBottom={6}>Experience</Heading>
-				<CardBody>
-					<Stack direction='column' spacing={8} divider={<Divider alignSelf='center' width='90%' colorMode={colorMode} />}>
-						{experienceItems.map((experience, index) => {
-							const {company, startDate, endDate, teams} = experience;
-							return (
-								<Box key={index}>
+			</CardHeader>
+			<CardBody>
+				<Stack direction='column' spacing={8} divider={<Divider alignSelf='center' width='90%' colorMode={colorMode} />}>
+					{experienceItems.map((experience, index) => {
+						const {company, startDate, endDate, teams} = experience;
+						return (
+							<Box key={index}>
 									<Stack direction='row' spacing={4}>
 										<Box boxSize={{base: '48', md: '60px'}}>
 											<Image
@@ -192,7 +217,7 @@ const ExperienceCard = ({experienceItems}) => {
 												<Heading size='md'>{company}</Heading>
 												<Text fontSize={14}>{formattedDateStringMonthAndYear(startDate)} - {formattedEndDateString(endDate)} • {formatDurationYearsMonths(startDate, endDate)}</Text>
 											</Stack>
-											{ teams.map((team, index) => {
+											{teams.map((team, index) => {
 												const {roles, description} = team;
 												return (
 													<Box key={index}>
@@ -227,14 +252,13 @@ const ExperienceCard = ({experienceItems}) => {
 						})}
 					</Stack>
 				</CardBody>
-			</CardHeader>
 		</Card>
 	);
 };
 
 const ResumeCard = () => {
 	const {colorMode} = useColorMode();
-	const {experience, education, organizations, skills} = resumeJson.sections;
+	const {experience, education, organizations, skills} = resumeData.sections;
 
 	return (
 		<Card
@@ -243,19 +267,19 @@ const ResumeCard = () => {
 			alignSelf='center'
 		>
 			<Stack direction={['column']} spacing={8}>
-				<CardHeader align='center'>
+				<CardHeader display='flex' flexDirection='column' alignItems='center' textAlign='center'>
 					<Heading size={['2xl']}>Adeeb Ali</Heading>
 					<Center>
 						<Stack mt={6} divider={<Divider colorMode={colorMode}/>} direction={['column', 'row']} spacing={4}>
 							<Box>
-								{resumeJson.header.location}
+								{resumeData.header.location}
 							</Box>
 							<Box>
-								{resumeJson.header.email}
+								{resumeData.header.email}
 							</Box>
 						</Stack>
 					</Center>
-					<Text marginTop={8} maxWidth={'80%'}>{resumeJson.header.aboutMe}</Text>
+					<Text marginTop={8} maxWidth={'80%'}>{resumeData.header.aboutMe}</Text>
 				</CardHeader>
 				<CardBody
 					paddingX={{base: 0, md: '20px'}}
@@ -281,13 +305,12 @@ const Resume = () => (
 		alignItems='center'
 	>
 		<Box width={{base: '100%', md: '85%'}}>
-			<Box align='right' marginBottom={4}>
+			<Box textAlign='right' marginBottom={4}>
 				<Button as='a' href='documents/Adeeb.Ali-resume.pdf' download={'adeeb-ali-resume.pdf'} leftIcon={<AiOutlineDownload />} variant='solid' colorScheme='green'>Download My Resume!</Button>
 			</Box>
 			<ResumeCard />
 		</Box>
 	</Flex>
-
 );
 
 export default Resume;

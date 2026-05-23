@@ -2,7 +2,11 @@ import {Box, Flex, useColorMode} from '@chakra-ui/react';
 import Header from './header';
 import Footer from './footer';
 
-const Layout = ({children}) => {
+type LayoutProps = {
+	children: React.ReactNode;
+};
+
+const Layout = ({children}: LayoutProps) => {
 	const {colorMode} = useColorMode();
 
 	const bgColor = {

@@ -2,14 +2,13 @@
   "name": "adeebali.com",
   "version": "1.0.0",
   "description": "Code for my website.",
-  "main": "index.js",
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "lint": "xo",
-    "lint:fix": "xo --fix",
-    "test": "xo && nyc jest"
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "test": "jest"
   },
   "keywords": [
     "Adeeb Ali",
@@ -17,11 +16,14 @@
     "nextjs",
     "nodejs",
     "react",
-    "xo",
+    "typescript",
     "jest"
   ],
   "author": "Adeeb Ali",
   "license": "",
+  "engines": {
+    "node": ">=24"
+  },
   "dependencies": {
     "@chakra-ui/icons": "2.0.19",
     "@chakra-ui/react": "2.6.0",
@@ -37,45 +39,14 @@
     "react-icons": "4.8.0"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.21.3",
+    "@types/luxon": "^3.7.1",
+    "@types/node": "^25.9.1",
+    "@types/react": "^18.3.29",
+    "@types/react-dom": "^18.3.7",
     "eslint": "8.39.0",
     "eslint-config-next": "^14.2.3",
     "eslint-plugin-react-hooks": "4.6.0",
     "jest": "29.5.0",
-    "nyc": "15.1.0",
-    "xo": "0.54.2"
-  },
-  "xo": {
-    "envs": [
-      "node",
-      "jest"
-    ],
-    "extends": [
-      "next"
-    ],
-    "rules": {
-      "n/file-extension-in-import": 0,
-      "import/no-unassigned-import": 0,
-      "import/extensions": 0,
-      "react/react-in-jsx-scope": 0,
-      "react/prop-types": 0,
-      "unicorn/filename-case": [
-        "error",
-        {
-          "case": "camelCase"
-        }
-      ]
-    },
-    "parser": "@babel/eslint-parser"
-  },
-  "nyc": {
-    "all": true,
-    "include": [
-      "src/**/*"
-    ],
-    "reporter": [
-      "lcov",
-      "text"
-    ]
+    "typescript": "^6.0.3"
   }
 }
