@@ -94,9 +94,36 @@ const resume: Resume = {
 		],
 		experience: [
 			{
+				company: 'hims & hers',
+				startDate: '2024-10',
+				endDate: 'Present',
+				teams: [
+					{
+						roles: [
+							{
+								title: 'Senior Software Engineer',
+								startDate: '2024-10',
+								endDate: 'Present',
+							},
+						],
+						description: [
+							"Lead design and development of a full stack CX application for hims & hers' global customer support team built with ReactJS and Spring Boot with Kotlin, improving customer support efficiency and experience for hims' 2.58 million subscriber base",
+							"Design and execute on a novel Agentic AI driven development process that increased developer efficiency and reduced time to production from quarters to weeks, which was adopted organization wide as a standard",
+							"Contribute to and maintain company- wide open source projects including a AI CLI tool and a React Component Library",
+							"Serve as the primary on-call engineer for the CX application team",
+							"Execute two major upgrades to move from NodeJS 10 and React 12 to LTS",
+							"Improve a 0% test coverage codebase to  >80% coverage with unit and integration tests using Jest, React Testing Library, and Cypress",
+							"Refactor a full JavaScript stack codebase to TypeScript, improving maintainability and developer experience",
+							"Champion and lead adoption of Vite as the standard frontend build tool for our organization's React applications",
+							"Collaborate with cross functional partners to launch and support several growth driven features"
+						]
+					}		
+				],
+			},
+			{
 				company: 'Target',
 				startDate: '2021-08',
-				endDate: 'Present',
+				endDate: '2024-10',
 				teams: [
 					{
 						roles: [
