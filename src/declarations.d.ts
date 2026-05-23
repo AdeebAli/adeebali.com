@@ -1,5 +1,6 @@
+declare type SvgImage = import('next/image').StaticImageData;
+
 declare module '*.svg' {
-	import type {StaticImageData} from 'next/image';
-	const content: StaticImageData;
+	const content: SvgImage;
 	export default content;
 }

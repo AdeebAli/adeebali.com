@@ -33,7 +33,7 @@ type DividerProps = StackDividerProps & {
 	darkColor?: string;
 };
 
-const imageMap: Record<string, any> = {
+const imageMap: Record<string, SvgImage> = {
 	'hims & hers': himsLogo,
 	Target: targetLogo,
 	Optum: optumLogo,
