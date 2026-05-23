@@ -21,6 +21,9 @@
   ],
   "author": "Adeeb Ali",
   "license": "",
+  "engines": {
+    "node": ">=24"
+  },
   "dependencies": {
     "@chakra-ui/icons": "2.0.19",
     "@chakra-ui/react": "2.6.0",
