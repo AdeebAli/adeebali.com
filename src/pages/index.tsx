@@ -3,7 +3,7 @@ import {Flex, Box, Divider, Heading, Text, useColorMode} from '@chakra-ui/react'
 import Image from 'next/image';
 import profilePicture from '../../public/images/me.jpg';
 
-const BodyText = ({children}) => (
+const BodyText = ({children}: {children: React.ReactNode}) => (
 	<Text
 		mt={8}
 		as='p'
@@ -34,13 +34,11 @@ const Index = () => {
 					borderRadius='100%'
 					overflow='hidden'
 				>
-
 					<Image
 						src={profilePicture}
 						alt='Adeeb Ali'
 						placeholder='blur'
 					/>
-
 				</Box>
 
 				<Heading
@@ -55,18 +53,15 @@ const Index = () => {
 					mt={5}
 					width={{base: '200px', md: '250px'}}
 				/>
-				<BodyText
-				>
+				<BodyText>
 					I&apos;m a Senior Software Engineer currently working at Target. I graduated from the University of Minnesota, Twin Cities in 2019 with a Bachelor of Science in Computer Science, and a Management Minor from the Carlson School of Management.
 					I&apos;m passionate about all things JavaScript and Node.js, and am always working to be a better developer every day.
 				</BodyText>
-				<BodyText
-
-				>
+				<BodyText>
 					When I&apos;m not writing code at work, you can find me tinkering- whether that&apos;s on my Raspberry Pi, my 3D Printer, or working on a personal project.
 				</BodyText>
 				<BodyText>
-				Outside of my tech related hobbies, I love checking out new coffee shops on the weekends, supporting my Minnesota Timberwolves, and going to the gym.
+					Outside of my tech related hobbies, I love checking out new coffee shops on the weekends, supporting my Minnesota Timberwolves, and going to the gym.
 				</BodyText>
 				<BodyText>
 					This site is a place for me to show off my personal projects, share pictures, and document my thoughts on development topics and other stuff along the way!
