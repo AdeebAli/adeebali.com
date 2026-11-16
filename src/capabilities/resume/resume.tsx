@@ -308,7 +308,7 @@ const Resume = () => (
 	>
 		<Box width={{base: '100%', md: '85%'}}>
 			<Box textAlign='right' marginBottom={4}>
-				<Button as='a' href='documents/Adeeb.Ali-resume.pdf' download={'adeeb-ali-resume.pdf'} leftIcon={<AiOutlineDownload />} variant='solid' colorScheme='green'>Download My Resume!</Button>
+				<Button as='a' href='documents/Adeeb_Ali_Resume.pdf' download={'adeeb-ali-resume.pdf'} leftIcon={<AiOutlineDownload />} variant='solid' colorScheme='green'>Download My Resume!</Button>
 			</Box>
 			<ResumeCard />
 		</Box>
