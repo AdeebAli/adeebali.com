@@ -50,3 +50,7 @@ Email forwarding powered by `ImprovMX`.
 ### NextJS Setup
 
 NextJS using Pages Router. Long term, the goal of this project is to move to the newer app router, per Vercel's guidance for modern Next.js applications.
+
+### CI
+
+The app's CI is fairly straightforward. When a PR is created, CI builds the app on NodeJS 24 (specified in `.github/workflows/nodejs.yml`) and ensures it passes, and concurrently runs a PR preview deployment via the Vercel Bot GitHub Integration.
