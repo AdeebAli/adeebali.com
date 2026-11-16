@@ -15,6 +15,7 @@ class MyDocument extends Document {
 					<link rel='shortcut icon' href='/favicon.ico'/>
 				</Head>
 				<body>
+					{/* Color Mode Script required for localStorage syncing */}
 					<ColorModeScript initialColorMode={theme.config.initialColorMode}/>
 					<Main/>
 					<NextScript/>
