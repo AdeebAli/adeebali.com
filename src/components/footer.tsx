@@ -1,55 +1,54 @@
-import {Flex, Box, Link, useColorMode, type FlexProps} from '@chakra-ui/react';
-import {AiOutlineLinkedin, AiOutlineGithub, AiOutlineMail} from 'react-icons/ai';
+import { Flex, Box, Link, type FlexProps } from "@chakra-ui/react";
+import {
+  AiOutlineLinkedin,
+  AiOutlineGithub,
+  AiOutlineMail,
+} from "react-icons/ai";
 
 const Footer = (props: FlexProps) => {
-	const {colorMode} = useColorMode();
-
-	const bgColor = {
-		dark: 'black',
-		light: 'white',
-	};
-
-	const color = {
-		dark: 'white',
-		light: 'black',
-	};
-
-	return (
-		<Flex
-			className='footer'
-			align='center'
-			flexDirection='column'
-			height='4rem'
-			width='100%'
-			marginTop='auto'
-			bg={bgColor[colorMode]}
-			color={color[colorMode]}
-			{...props}
-		>
-			<Flex
-				className='iconContainer'
-				flexDirection='row'
-			>
-				<Link href='https://www.linkedin.com/in/adeeb-ali-b34515134' mr={1}>
-					<Box as={AiOutlineLinkedin} boxSize={{base: '26px ', sm: '32px'}}/>
-				</Link>
-				<Link href='https://github.com/AdeebAli' mr={1}>
-					<Box as={AiOutlineGithub} boxSize={{base: '26px ', sm: '32px'}}/>
-				</Link>
-				<Link href='mailto:me@adeebali.com'>
-					<Box as={AiOutlineMail} boxSize={{base: '26px ', sm: '32px'}}/>
-				</Link>
-			</Flex>
-			<Flex
-				className='copyright'
-				color='grey.200'
-				mt={1}
-				fontSize={12}
-			>
-				© {new Date().getFullYear()} Adeeb Ali.
-			</Flex>
-		</Flex>
-	);
+  return (
+    <Flex
+      className="footer"
+      align="center"
+      flexDirection="column"
+      height="4rem"
+      width="100%"
+      marginTop="auto"
+      bg={{ base: "white", _dark: "black" }}
+      color={{ base: "black", _dark: "white" }}
+      {...props}
+    >
+      <Flex className="iconContainer" flexDirection="row">
+        <Link href="https://www.linkedin.com/in/adeebmali" mr={1}>
+          <Box
+            boxSize={{ base: "26px ", sm: "32px"}}
+            asChild
+          >
+            <AiOutlineLinkedin />
+          </Box>
+        </Link>
+        <Link href="https://github.com/AdeebAli" mr={1}>
+          <Box
+            boxSize={{ base: "26px", sm: "32px" }}
+            asChild
+          >
+            <AiOutlineGithub />
+          </Box>
+        </Link>
+        <Link href="mailto:me@adeebali.com">
+          <Box
+            boxSize={{ base: "26px", sm: "32px"}}
+            asChild
+          >
+            <AiOutlineMail />
+          </Box>
+        </Link>
+      </Flex>
+      <Flex className="copyright" color="grey.200" mt={1} fontSize={12}>
+        © {new Date().getFullYear()} Adeeb Ali.
+      </Flex>
+    </Flex>
+  );
 };
 
 export default Footer;
